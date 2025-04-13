@@ -30,8 +30,9 @@ import {
 
 // Extend the insert schema with validation rules
 const createCaseSchema = insertCaseSchema.extend({
-  title: z.string().min(3, { message: "Title must be at least 3 characters" }),
-  caseNumber: z.string().min(3, { message: "Case number is required" }),
+  title: z.string().min(3, { message: "Başlık en az 3 karakter olmalıdır" }),
+  caseNumber: z.string().min(3, { message: "Dosya numarası gereklidir" }),
+  crimeDate: z.string().optional().transform(val => val ? new Date(val) : undefined),
 });
 
 export default function CreateCaseForm() {
@@ -54,11 +55,7 @@ export default function CreateCaseForm() {
 
   const createCaseMutation = useMutation({
     mutationFn: async (values: z.infer<typeof createCaseSchema>) => {
-      // Format the date if provided
-      if (values.crimeDate) {
-        values.crimeDate = new Date(values.crimeDate);
-      }
-      
+      // Date transformation is now handled by the schema
       return apiRequest("POST", "/api/cases", values);
     },
     onSuccess: async (response) => {

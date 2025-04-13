@@ -28,6 +28,7 @@ import {
 
 // Extend the insert schema with validation rules
 const evidenceFormSchema = insertEvidenceSchema.extend({
+  collectedAt: z.string().optional().transform(val => val ? new Date(val) : undefined),
   evidenceNumber: z.string().min(3, { message: "Evidence number is required" }),
   type: z.string().min(1, { message: "Evidence type is required" }),
   caseId: z.number({ required_error: "Case ID is required" }),
@@ -64,11 +65,7 @@ export default function EvidenceForm({ evidence, onClose, caseId }: EvidenceForm
 
   const createEvidenceMutation = useMutation({
     mutationFn: async (values: z.infer<typeof evidenceFormSchema>) => {
-      // Format the date
-      if (values.collectedAt) {
-        values.collectedAt = new Date(values.collectedAt);
-      }
-      
+      // Date transformation is now handled by the schema
       return apiRequest("POST", "/api/evidence", values);
     },
     onSuccess: async () => {
@@ -92,11 +89,7 @@ export default function EvidenceForm({ evidence, onClose, caseId }: EvidenceForm
     mutationFn: async (values: z.infer<typeof evidenceFormSchema>) => {
       if (!evidence) throw new Error("No evidence to update");
       
-      // Format the date
-      if (values.collectedAt) {
-        values.collectedAt = new Date(values.collectedAt);
-      }
-      
+      // Date transformation is now handled by the schema
       return apiRequest("PUT", `/api/evidence/${evidence.id}`, values);
     },
     onSuccess: async () => {
