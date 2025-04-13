@@ -1,0 +1,80 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+    font-family: 'Source Sans Pro', sans-serif;
+    background-color: #F5F5F5;
+    color: #212121;
+  }
+
+  h1, h2, h3, h4, h5, h6, .font-heading {
+    font-family: 'IBM Plex Sans', sans-serif;
+  }
+
+  :root {
+    --background: 0 0% 96.1%;
+    --foreground: 222.2 47.4% 11.2%;
+    
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 47.4% 11.2%;
+    
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 47.4% 11.2%;
+    
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    
+    --primary: 230 65% 30%;
+    --primary-foreground: 210 40% 98%;
+    
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+    
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+    
+    --destructive: 0 100% 50%;
+    --destructive-foreground: 210 40% 98%;
+    
+    --ring: 215 20.2% 65.1%;
+    
+    --radius: 0.5rem;
+
+    --chart-1: 230 65% 30%;
+    --chart-2: 0 85% 50%;
+    --chart-3: 43 100% 50%;
+    --chart-4: 199 100% 41%;
+    --chart-5: 291 64% 42%;
+  }
+
+  .sidebar-link.active {
+    background-color: rgba(26, 35, 126, 0.1);
+    border-left: 4px solid #1A237E;
+  }
+
+  .sidebar-link:hover:not(.active) {
+    background-color: rgba(26, 35, 126, 0.05);
+  }
+
+  .status-indicator {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 6px;
+  }
+
+  .transition-default {
+    transition: all 200ms ease-in-out;
+  }
+}
