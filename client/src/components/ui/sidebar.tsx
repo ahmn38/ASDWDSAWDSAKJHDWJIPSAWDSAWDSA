@@ -35,7 +35,7 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
           <span className="material-icons absolute left-3 top-2.5 text-[#757575]">search</span>
           <input 
             type="text" 
-            placeholder="Search cases..." 
+            placeholder="Dosyaları ara..." 
             className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#1A237E] focus:border-transparent" 
           />
         </div>
@@ -53,7 +53,7 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
                 }`}
               >
                 <span className="material-icons mr-3">dashboard</span>
-                <span className="font-ibm-plex">Dashboard</span>
+                <span className="font-ibm-plex">Gösterge Paneli</span>
               </div>
             </Link>
           </li>
@@ -67,7 +67,7 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
                 }`}
               >
                 <span className="material-icons mr-3">folder</span>
-                <span className="font-ibm-plex">Cases</span>
+                <span className="font-ibm-plex">Dosyalar</span>
               </div>
             </Link>
           </li>

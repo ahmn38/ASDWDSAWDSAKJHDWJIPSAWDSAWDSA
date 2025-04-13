@@ -25,7 +25,7 @@ export default function MainLayout({ children }: MainLayoutProps) {
           </button>
           <div className="flex items-center">
             <span className="material-icons mr-2">local_police</span>
-            <h1 className="font-ibm-plex text-xl font-bold">DetectiveHub</h1>
+            <h1 className="font-ibm-plex text-xl font-bold">DedektifMerkezi</h1>
           </div>
         </div>
         <div className="flex items-center space-x-4">
@@ -40,7 +40,7 @@ export default function MainLayout({ children }: MainLayoutProps) {
             <div className="w-8 h-8 rounded-full bg-gray-300 flex items-center justify-center mr-2">
               <span className="material-icons text-sm">person</span>
             </div>
-            <span className="font-ibm-plex text-sm hidden md:block">Det. Sarah Johnson</span>
+            <span className="font-ibm-plex text-sm hidden md:block">Det. Alina Carrington</span>
             <span className="material-icons text-sm ml-1">arrow_drop_down</span>
           </div>
         </div>

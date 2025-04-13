@@ -117,7 +117,7 @@ export default function CaseView({ caseId }: CaseViewProps) {
                 <div className="w-5 h-5 rounded-full bg-gray-300 flex items-center justify-center mr-1">
                   <span className="material-icons text-xs">person</span>
                 </div>
-                <span className="font-ibm-plex font-medium">Det. Sarah Johnson</span>
+                <span className="font-ibm-plex font-medium">Det. Alina Carrington</span>
               </div>
             </div>
           </div>

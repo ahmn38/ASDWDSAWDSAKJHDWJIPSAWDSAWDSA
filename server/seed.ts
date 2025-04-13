@@ -12,8 +12,8 @@ export async function seedDatabase() {
     const user = await storage.createUser({
       username: "detective",
       password: "password123",
-      firstName: "Sarah",
-      lastName: "Johnson",
+      firstName: "Alina",
+      lastName: "Carrington",
       badgeNumber: "DT-4952",
       role: "detective"
     });
@@ -63,7 +63,7 @@ export async function seedDatabase() {
       description: "Victim's Business Records from Reynolds Tech Consulting for the past 6 months.",
       location: "Business Office",
       status: "under_review",
-      collectedBy: "Det. Sarah Johnson",
+      collectedBy: "Det. Alina Carrington",
       collectedAt: new Date("2023-05-16"),
       notes: "Includes client contracts, payment records, and expense reports.",
     });
