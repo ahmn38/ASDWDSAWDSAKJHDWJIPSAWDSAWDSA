@@ -16,10 +16,10 @@ export default function CaseList() {
           <div className="flex items-center justify-between mb-4">
             <h2 className="font-ibm-plex text-lg font-semibold text-[#212121]">Active Cases</h2>
             <Link href="/cases/create">
-              <a className="text-[#1A237E] hover:text-[#0288D1] flex items-center text-sm transition-all duration-200">
+              <div className="text-[#1A237E] hover:text-[#0288D1] flex items-center text-sm transition-all duration-200 cursor-pointer">
                 <span className="material-icons text-sm mr-1">add</span>
                 New Case
-              </a>
+              </div>
             </Link>
           </div>
           <div className="space-y-4">
@@ -38,10 +38,10 @@ export default function CaseList() {
         <div className="flex items-center justify-between mb-4">
           <h2 className="font-ibm-plex text-lg font-semibold text-[#212121]">Active Cases</h2>
           <Link href="/cases/create">
-            <a className="text-[#1A237E] hover:text-[#0288D1] flex items-center text-sm transition-all duration-200">
+            <div className="text-[#1A237E] hover:text-[#0288D1] flex items-center text-sm transition-all duration-200 cursor-pointer">
               <span className="material-icons text-sm mr-1">add</span>
               New Case
-            </a>
+            </div>
           </Link>
         </div>
         
@@ -49,7 +49,7 @@ export default function CaseList() {
           {cases && cases.length > 0 ? (
             cases.map((caseItem) => (
               <Link key={caseItem.id} href={`/cases/${caseItem.id}`}>
-                <a className="block">
+                <div className="block cursor-pointer">
                   <div className="border border-gray-200 rounded-lg p-4 hover:shadow-md transition-all duration-200 bg-white">
                     <div className="flex justify-between items-start">
                       <div>
@@ -64,7 +64,7 @@ export default function CaseList() {
                                 : 'bg-[#0288D1] text-white'
                             }`}
                           >
-                            {caseItem.priority?.charAt(0).toUpperCase() + caseItem.priority?.slice(1)} Priority
+                            {caseItem.priority ? `${caseItem.priority.charAt(0).toUpperCase()}${caseItem.priority.slice(1)} Priority` : 'Priority'}
                           </span>
                         </div>
                         <p className="text-sm text-[#757575]">
@@ -80,7 +80,7 @@ export default function CaseList() {
                             : 'bg-blue-100 text-blue-800'
                         }`}
                       >
-                        {caseItem.status?.charAt(0).toUpperCase() + caseItem.status?.slice(1)}
+                        {caseItem.status ? `${caseItem.status.charAt(0).toUpperCase()}${caseItem.status.slice(1)}` : 'Status'}
                       </span>
                     </div>
                     
@@ -101,7 +101,7 @@ export default function CaseList() {
                       )}
                     </div>
                   </div>
-                </a>
+                </div>
               </Link>
             ))
           ) : (
@@ -109,7 +109,7 @@ export default function CaseList() {
               <span className="material-icons mb-2 text-3xl">folder_off</span>
               <p>No cases found</p>
               <Link href="/cases/create">
-                <a className="text-[#1A237E] mt-2 inline-block">Create your first case</a>
+                <div className="text-[#1A237E] mt-2 inline-block cursor-pointer">Create your first case</div>
               </Link>
             </div>
           )}
