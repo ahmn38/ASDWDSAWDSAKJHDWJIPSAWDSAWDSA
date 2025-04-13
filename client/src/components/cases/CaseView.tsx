@@ -88,7 +88,7 @@ export default function CaseView({ caseId }: CaseViewProps) {
                     : 'bg-[#0288D1] text-white'
                 }`}
               >
-                {caseData.priority?.charAt(0).toUpperCase() + caseData.priority?.slice(1)} Priority
+                {caseData.priority ? `${caseData.priority.charAt(0).toUpperCase()}${caseData.priority.slice(1)} Priority` : 'Priority'}
               </span>
             </div>
             <p className="text-[#757575] text-sm">

@@ -101,8 +101,8 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
           </li>
           <li className="px-4 mb-2">
             <Link href="/ai-analysis">
-              <a 
-                className={`flex items-center px-2 py-2 rounded transition-all duration-200 ${
+              <div 
+                className={`flex items-center px-2 py-2 rounded transition-all duration-200 cursor-pointer ${
                   isActive("/ai-analysis") 
                     ? "bg-[#1A237E]/10 text-[#1A237E] border-l-4 border-[#1A237E]" 
                     : "text-[#212121] hover:text-[#1A237E] hover:bg-[#1A237E]/5"
@@ -110,7 +110,7 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
               >
                 <span className="material-icons mr-3">psychology</span>
                 <span className="font-ibm-plex">AI Analysis</span>
-              </a>
+              </div>
             </Link>
           </li>
         </ul>
@@ -121,7 +121,7 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
             {recentCases.map((caseItem) => (
               <li key={caseItem.id} className="mb-1">
                 <Link href={`/cases/${caseItem.id}`}>
-                  <a className="flex items-center px-2 py-1.5 text-sm text-[#212121] rounded hover:text-[#1A237E] transition-all duration-200">
+                  <div className="flex items-center px-2 py-1.5 text-sm text-[#212121] rounded hover:text-[#1A237E] transition-all duration-200 cursor-pointer">
                     <span 
                       className={`w-2 h-2 rounded-full mr-2 ${
                         caseItem.priority === "high" ? "bg-[#D32F2F]" : 
@@ -130,7 +130,7 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
                       }`}
                     ></span>
                     <span>{caseItem.title}</span>
-                  </a>
+                  </div>
                 </Link>
               </li>
             ))}
@@ -143,10 +143,10 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
       
       <div className="p-4 border-t border-gray-200">
         <Link href="/cases/create">
-          <a className="flex items-center justify-center w-full px-4 py-2 text-[#1A237E] bg-[#1A237E] bg-opacity-10 rounded-md font-ibm-plex transition-all duration-200 hover:bg-opacity-20">
+          <div className="flex items-center justify-center w-full px-4 py-2 text-[#1A237E] bg-[#1A237E] bg-opacity-10 rounded-md font-ibm-plex transition-all duration-200 hover:bg-opacity-20 cursor-pointer">
             <span className="material-icons mr-2">add</span>
             <span>New Case</span>
-          </a>
+          </div>
         </Link>
       </div>
     </aside>
