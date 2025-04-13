@@ -81,7 +81,7 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
                 }`}
               >
                 <span className="material-icons mr-3">inventory_2</span>
-                <span className="font-ibm-plex">Evidence Vault</span>
+                <span className="font-ibm-plex">Delil Deposu</span>
               </div>
             </Link>
           </li>
@@ -95,7 +95,7 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
                 }`}
               >
                 <span className="material-icons mr-3">people</span>
-                <span className="font-ibm-plex">Witnesses</span>
+                <span className="font-ibm-plex">Tanıklar</span>
               </div>
             </Link>
           </li>
@@ -109,14 +109,14 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
                 }`}
               >
                 <span className="material-icons mr-3">psychology</span>
-                <span className="font-ibm-plex">AI Analysis</span>
+                <span className="font-ibm-plex">Yapay Zeka Analizi</span>
               </div>
             </Link>
           </li>
         </ul>
         
         <div className="mt-8 px-4">
-          <h3 className="font-ibm-plex font-medium text-xs uppercase text-[#757575] tracking-wider mb-3 px-2">Recent Cases</h3>
+          <h3 className="font-ibm-plex font-medium text-xs uppercase text-[#757575] tracking-wider mb-3 px-2">Son Dosyalar</h3>
           <ul>
             {recentCases.map((caseItem) => (
               <li key={caseItem.id} className="mb-1">
@@ -135,7 +135,7 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
               </li>
             ))}
             {recentCases.length === 0 && (
-              <li className="text-sm text-[#757575] px-2">No recent cases</li>
+              <li className="text-sm text-[#757575] px-2">Dosya bulunamadı</li>
             )}
           </ul>
         </div>
@@ -145,7 +145,7 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
         <Link href="/cases/create">
           <div className="flex items-center justify-center w-full px-4 py-2 text-[#1A237E] bg-[#1A237E] bg-opacity-10 rounded-md font-ibm-plex transition-all duration-200 hover:bg-opacity-20 cursor-pointer">
             <span className="material-icons mr-2">add</span>
-            <span>New Case</span>
+            <span>Yeni Dosya</span>
           </div>
         </Link>
       </div>
